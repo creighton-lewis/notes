@@ -96,7 +96,9 @@ net localgroup Administrators
 
 - AppReadiness is misconfigured to allow Server Operators full control and let them change how a service starts 
 -  Only possible if someon has service_all_access
+
 **Data Exfilitration**
+
 ```bash
 secretsdump.py server_adm@10.129.43.42
 ```
