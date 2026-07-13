@@ -1,5 +1,4 @@
-Related: [[SMB]] | [[smbmap]] | 
-# Usage
+# SMB 
 
 *Server Creation*
 
