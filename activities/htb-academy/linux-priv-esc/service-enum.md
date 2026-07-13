@@ -37,8 +37,40 @@ Process >> Identify containers that exist  >> Enumerate and exploit
 ```
 ### Docker 
 >[!NOTE]
-> How to find out if docker container exists on system 
+> How to find out if docker container exists on system
+
+**Recon** 
 ```
-wget https://github.com/stealthcopter/deepce/raw/main/deepce.sh
+nc -vn target.com 2375
+nuclei -u http://site.com -tag docker
+sudo nmap -sV  --script docker-version,docker-info url 
+```
+**Connecting**
+```
+export DOCKER_HOST="tcp://target.com:2375"
+docker ps
+```
+
+```
+export DOCKER_HOST="tcp://target.com:2376"
+export DOCKER_TLS_VERIFY=1
+docker --tlsverify ps
+```
+**Enumeration**
+```
+docker -H tcp://target.com:2375 ps
+
+docker -H tcp://target.com:2375 ps
+
+docker -H tcp://target.com:2375 inspect <container_id>
+
+curl http://target.com:2375/containers/json?all=1
+
+docker -H tcp://target.com:2375 version
+
+docker -H tcp://target.com:2375 info
+
+docker -H tcp://target.com:2375 system df 
+
 
 ```
