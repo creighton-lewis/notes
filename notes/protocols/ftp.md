@@ -12,7 +12,8 @@ nuclei -u http://url.com -tags ftp
 
 *Nmap Scans*
 
-> [!ATTENTION] Do not assume that ftp port will always be on port 21. Sometimes, it is on a different one
+>[!IMPORTANT]
+>Do not assume that ftp port will always be on port 21. Sometimes, it is on a different one
 
 
 ```bash 
