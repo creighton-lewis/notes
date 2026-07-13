@@ -56,3 +56,9 @@ Get-NetGPO
 Get-NetOU
 Find-InterestingDomainAcl
 ```
+**Users** 
+```
+net accounts /domain
+net group /domain
+net group "Domain Admins" /domain
+net view \computer /ALL 
