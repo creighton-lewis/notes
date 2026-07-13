@@ -1,3 +1,4 @@
+```
 /home/*
 cat /root/.ssh/authorized\_keys 
 cat /root/.ssh/identity.pub 
@@ -27,3 +28,5 @@ grep -ir "BEGIN DSA PRIVATE KEY" /home/*
 
 grep -ir "BEGIN RSA PRIVATE KEY" /*
 grep -ir "BEGIN DSA PRIVATE KEY" /
+
+```
