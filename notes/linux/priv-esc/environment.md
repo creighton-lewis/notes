@@ -121,7 +121,9 @@ ssh hackNos@<IP-Adress> -t "bash --noprofile"```
 ```
 ## Set UID/SUID Permissions 
 
+
 [resource-1](https://linuxconfig.org/how-to-use-special-permissions-the-setuid-setgid-and-sticky-bits) 
+
 
 [resource-2](https://www.youtube.com/watch?v=718L9YuRUTY)
 
