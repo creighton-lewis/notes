@@ -143,13 +143,13 @@ UNION select 1,
 
 ```
 
-# Exploitation 
+# Injections
 ## Logic Suberversion 
 
 ### Comments 
 - Comments can be added to prevent certain logic from being executed. Anything found after a ``--`` or `##` is not executed 
 - Parentheses can also be used to ensure certain conditions are checked before others  
-### Union Clause
+### Union Clause & Injection
 - Union clauses combine results from SELECT statements 
 - Data types from each column MUST be the same, and the number of columns in each table MUST also match 
 `SELECT a, b FROM table1 UNION SELECT c, d FROM table2
@@ -177,53 +177,10 @@ cn' UNION select 1,@@version,3,4-- -
 
 
 
-## Reading Files  
+# Exploitations
 
-```mysql
-DROP 
+## Database Enumeration 
 
-```
+## Reading Files
 
-
-An SQL injection occurs when user-input is inputted into the SQL query string without properly sanitizing or filtering the input. The previous example showed how user-input can be used within an SQL query, and it did not use any form of input sanitization:
-
-```sql
-select * from logins where username like '%$searchInput'
-```
-
-```sql
-'%1'; DROP TABLE users;'
-```
-
-```sql
-select * from logins where username like '%1'; DROP TABLE users;'
-```
-
-
-
-# Types of Injections 
-- In-band 
-	- Union Based: Exact location must be specified
-
-logic can be subverted by using various payloads like the following 
-
-```shell
-'
-
-''
-
-#
-
-;
-
-)
-
-```
-OR injections 
-- can be used 
-- AND gets evaluated by OR 
-![[Pasted image 20260616200436.png]]
-'1' = '1' is True 
-password='something' is False 
-The result of the AND is evaluated BEFORE the OR. So the answer would be false first then true. 
-
+## Writing Files
