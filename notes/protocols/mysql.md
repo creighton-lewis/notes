@@ -25,16 +25,16 @@ mysql -u user -h remote.host.htb -P 3306 -p --ssl=DISABLE
 
 # Enumeration 
 
-
+## External
 ```
 nuclei -u http://url -tag mysql 
 
 sudo nmap -sV -sC 3306 
 ```
 
-## External 
+## Internal 
 
-*Table Manipulation *
+### Table Manipulation
 ```mysql
 INSERT INTO table_name VALUES (column1_value, column2_value, column3_value); 
 ```
@@ -57,7 +57,7 @@ ALTER TABLE logins MODIFY newerColumn DATE;
 ```mysql
 UPDATE logins SET password = 'change_password' WHERE id > 1;
 ```
-# Internal 
+
 ### ***Database Version***
 
 ```sql
@@ -144,6 +144,14 @@ UNION select 1,
 ```
 
 # Injections
+```
+** In Band - > Union Based : Must specify exact column we can read to suqery will direct output to be printed there
+           - > Error Based : Used when we can get php or sql errors in front end and may intentionally cause error that returns
+output of query
+** Blind  - > Boolean Based: Can use SQL conditional statements to control whether the page returns any output at all, 'i.e., original query response,' if our conditional statement returns true
+          - > Time Based: We use SQL conditional statements that delay the page response if the conditional statement returns true using the Sleep() function.
+```
+
 ## Logic Suberversion 
 
 ### Comments 
