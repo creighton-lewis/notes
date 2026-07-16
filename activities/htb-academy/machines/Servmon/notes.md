@@ -71,7 +71,7 @@ SClient++ - 0.5.2.35 2018-01-28 Started!
 nscp settings --activate-module CheckSystem --add-missing
 # NS Client Login & Privilege Escalation 
 ## Exploit search 
-``
+```
 vulnx search nsclient++ #chose exploit that matches the year of the box 
 ```
 
