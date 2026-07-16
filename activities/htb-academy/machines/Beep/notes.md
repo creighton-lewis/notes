@@ -1,3 +1,4 @@
+# Scans 
 ## Nmap scan 
 ```
 # Nmap 7.95 scan initiated Thu Jul 16 22:40:21 2026 as: nmap -sV -sC -A -T 4 -oN scan-1 10.129.229.183
@@ -85,7 +86,10 @@ robots-txt] [http] [info] https://10.129.229.183/robots.txt
 [http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://10.129.229.183
 ****
 ```
+```
 searchsploit openssh 4.3
 SSH-2.0-OpenSSH_4.3
+multiple/dos/2444.sh
+```
 
 
