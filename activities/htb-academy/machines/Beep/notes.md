@@ -92,4 +92,10 @@ SSH-2.0-OpenSSH_4.3
 multiple/dos/2444.sh
 ```
 
+# Notes 
+- Several open ports
+- NOt sure what exploit would be the best or if any even exist that work well
+- Looks like webpage
+- Ssl is expired 
+
 
