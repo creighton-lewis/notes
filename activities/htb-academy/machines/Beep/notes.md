@@ -104,7 +104,12 @@ multiple/dos/2444.sh
 >[!NOTE] the CVE code mentioned can do the following: 
 >issabel-pbx version 4.0.0-6 contains a Broken Access Control vulnerability that manifests as unauthenticated Directory Listing on the web interface. Any remote, unauthenticated attacker >can browse the application's modules directory and directly access sensitive source files, configuration files, and internal application logic without any credentials or authorization.
 
-```
-rpccinfo -U '' -N 10.129.229.183 #denied 
-```
-- Should have visited port 443 in browser with http, which gave crucial hint 
+>[!NOTE]
+>Exploitation
+>Note - It might be possible that the webpage cannot be loaded due to Firefox and other browsers
+>changing their min TLS version to a number higher than what the box supports. The workaround
+>to this is to edit the “security.tls.version.min” to 1.
+>To modify the minimum TLS version in Firefox, follow these steps:
+>1. Open a new tab in Firefox.Enter "about:config" in the address bar and hit Enter/Return.
+>2. In the search box located above the list, enter "security.tls.version.min".
+>3. Locate the preference with the name "security.tls.version.min" and modify its value to ‘1’.
