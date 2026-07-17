@@ -66,6 +66,7 @@ Get-ObjectAcl -ResolveGUIDs
 Get-NetGPO
 Get-NetOU
 Find-InterestingDomainAcl
+Find-ObjectAcl -ResolveGUIDs -Identity "HTB.LOCAL" | Where-Object { $_.ActiveDirectoryRights -match "WriteDACL" } # this can be any privilege
 ```
 **Users** 
 ```
