@@ -189,5 +189,10 @@ http://10.129.95.210:53 # unresponsive
 - Needed write up?
 Yes, for ldap enumeration and privilege escalation
 f5985675a26f753af957d6aa05022e60
-
+ # What threw me off: 
+ - LDAP  just LDAp in general: was not exposed to enumerating or exploitation
+ - LDAP querying 
+ - Utilizing bloodhound module of nxc ldap command: bloodhound was not on system at the time it was being created
+- Focusing on CVE values too earlier on 
+ - Sharphound not  loading or working 
 
