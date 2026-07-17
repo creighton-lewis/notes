@@ -1,5 +1,6 @@
 # Scans
 ##  Nmap Scan 
+```
 53/tcp   open  domain       Simple DNS Plus
 88/tcp   open  kerberos-sec Microsoft Windows Kerberos (server time: 2026-07-17 15:49:51Z)
 135/tcp  open  msrpc        Microsoft Windows RPC
@@ -59,7 +60,7 @@ TRACEROUTE (using port 21/tcp)
 HOP RTT      ADDRESS
 1   72.17 ms 10.10.16.1
 2   72.19 ms 10.129.95.210
-
+```
 
 ## Nuclei-scan 
 ## Rustscan 
