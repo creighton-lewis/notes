@@ -116,7 +116,17 @@ ldapsearch -x -H ldap://10.129.95.210 -b "dc=htb,dc=local" "(objectClass=person)
 2026-07-17T14:06:55.0418973-07:00|INFORMATION|SharpHound Common Version: 4.6.2.0
 2026-07-17T14:06:55.0418973-07:00|ERROR|The .Net Runtime is not compatible with SharpHound. Please update to .Net 4.7.2.
 ```
-- Also attempted to use the bloodhound module of nxc ldap 
+- Also attempted to use the bloodhound module of nxc ldap which did not work the first time, but worked the second time?
+```
+nxc ldap 10.129.95.210 -u svc-alfresco -p s3rvice --bloodhound -c All --dns-server 10.129.95.210
+server 10.129.95.210
+SMB         10.129.95.210   445    FOREST           [*] Windows 10 / Server 2016 Build 14393 x64 (name:FOREST) (domain:htb.local) (signing:True) (SMBv1:True)
+LDAP        10.129.95.210   389    FOREST           [+] htb.local\svc-alfresco:s3rvice
+LDAP        10.129.95.210   389    FOREST           Resolved collection methods: container, group, rdp, dcom, objectprops, acl, trusts, session, localadmin, psremote
+LDAP        10.129.95.210   389    FOREST           Done in 00M 41S
+LDAP        10.129.95.210   389    FOREST           Compressing output into /home/user/.nxc/logs/FOREST_10.129.95.210_2026-07-17_220730_bloodhound.zip
+```
+
 # Exploit Information & Links 
 Cntrl+D to stop recording
 ```
