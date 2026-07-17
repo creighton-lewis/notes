@@ -11,3 +11,7 @@ ldapsearch -x -H ldap://target.com \
 ```
 ldapsearch -Q -Y GSSAPI -H ldap://10.129.95.210 -b 'DC=htb,local' '(objectClass=user)'
 ```
+
+```
+ldapsearch -X -H ldap://ip -b "dc=authority,dc=htb"
+```
