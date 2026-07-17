@@ -160,6 +160,7 @@ Affected Products 🎯
 http://10.129.95.210:5985/ # unresponsive
 http://10.129.95.210:53 # unresponsive 
 # Time to completion
-- 2 + hours
+- 3 + hours
 - Needed write up?
 Yes, for ldap enumeration and privilege escalation
+f5985675a26f753af957d6aa05022e60
