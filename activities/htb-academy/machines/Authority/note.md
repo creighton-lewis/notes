@@ -215,7 +215,7 @@ admin-pass: !@#$%^&*
 
 ```mermaid
 flowchart LR
-    A[Get Credentials From SMB] --> B[ Clean up the ansible hashes] --> C[ Convert ansible hashes into things that are crackable with tools like john the ripper] --> D[ Use the password to decrypt, officially using ansible decrypt]
+    A[Get Credentials From SMB] --> B[ Clean up the ansible hashes] --> C[ Convert into crackable format with ansibl2john ] --> D[ Use the password to decrypt, officially using ansible decrypt]
 ```
 
 
