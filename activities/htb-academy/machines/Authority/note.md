@@ -215,7 +215,7 @@ admin-pass: !@#$%^&*
 
 ```mermaid
 flowchart LR
-    A[Get Credentials From SMB] --> B[ Clean up the ansible hashes] --> C[ Convert into crackable format with ansibl2john ] --> D[ Use the password to decrypt, officially using ansible decrypt]
+    A[Get Credentials From SMB] --> B[ Clean up the ansible hashes] --> C[ Convert into crackable format with ansibl2john ] --> D[ Use the password to decrypt, officially using ansible decrypt] F [
 ```
 ```
 !@#$%^&*
@@ -227,4 +227,4 @@ svc_pwm
 
 
 
-
+`T;CN=svc_ldap,OU=Service Accounts,OU=CORP,DC=authority,DC=htb�lDaP_1n_th3_cle4r!
