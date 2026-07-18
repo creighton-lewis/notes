@@ -53,3 +53,7 @@ Service detection performed. Please report any incorrect results at https://nmap
   ↳ Patch: ✔ | POCs: ✘ | Nuclei Template: ✘ | HackerOne: ✔
 ```
 
+
+- Email is validated
+-  Phone number is validated
+-  
