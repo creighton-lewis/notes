@@ -151,6 +151,11 @@ Nmap done: 1 IP address (1 host up) scanned in 61.42 seconds
   ```
    - rpcclient -U "" -N $ip
    ```
+- Port 8443
+  - Reveals a private login for username and password
+```
+ 
+PWM is currently in configuration mode. This mode allows updating the configuration without authenticating to an LDAP directory first. End user functionality is not available in this mode.
 
-
-  
+After you have verified the LDAP directory settings, use the Configuration Manager to restrict the configuration to prevent unauthorized changes. After restricting, the configuration can still be changed but will require LDAP directory authentication first.
+```
