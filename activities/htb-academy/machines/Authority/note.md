@@ -128,15 +128,21 @@ Nmap done: 1 IP address (1 host up) scanned in 61.42 seconds
 - Obviously a windows machine
 - Several ports open
 - Services to check
-- SMB
+- ## SMB
    - Can I connect?
    - No, access denied
    - Not smbV1 version
    - nxc smb $ip -u admin -p pass # guest
    - nxc smb 10.129.30.252 -u '' -p ''
-   - nxc smb $ip -u admin -p "" --shares # reveals actual shares, thanks to nuclei scan i found out this was possible
-   - #spidering shares is possible! what the fuck 
-   - 
+   - nxc smb $ip -u admin -p "" --shares # reveals actual shares, thanks to nuclei scan i found out this was possible #spidering shares is possible
+   - Turns out guest users can download files when using -u admin and -p '' as their credentials
+ ### Credentials 
+ ldap_bind_password = sunrise 
+ pwm_admin_password = password 
+ tomacat_users = username = "admin" password = T0mc@tAdm1n
+ pwm_admin_pasword = !vault
+ 
+
 
 - LDAP
    - Can I connect?
@@ -167,6 +173,13 @@ Clicking on configuration mode reveals that a user has authentticated successful
 - Identity was svc_pwm DC=htb,DC=corp
 - had been trying to authenticate to ldap search by using the wrong thang
 - Looks like authentication through no identity has been done with address 127.0.0.1
->![!NOTE]
-> Saw this
-> The PWM (Password Management for LDAP) does not have a default password; it requires you to set a configuration password during the initial setup. You must create a strong password for configuration access when you first configure PWM.
+>[!NOTE]
+>Saw this
+>The PWM (Password Management for LDAP) does not have a default password; it requires you to set a configuration password during the initial setup. You must create a strong password for configuration access when you first configure PWM.
+
+- Reviewed credentials for smb from nuclei-scan
+- Turns out guest users can download files when using -u admin and -p '' as their credentials
+- Went to PWM file and saw that the default admin login name is root and the admin password is password
+- Saw that PWM templates, the pwm_admin_password is !vault
+- ldap_admin_password: !vault 
+- 
