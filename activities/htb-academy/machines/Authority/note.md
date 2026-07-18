@@ -138,8 +138,11 @@ Nmap done: 1 IP address (1 host up) scanned in 61.42 seconds
    - Turns out guest users can download files when using -u admin and -p '' as their credentials
  ### Credentials 
  ldap_bind_password = sunrise 
+ 
  pwm_admin_password = password 
+ 
  tomacat_users = username = "admin" password = T0mc@tAdm1n
+ 
  pwm_admin_pasword = !vault
  
 
