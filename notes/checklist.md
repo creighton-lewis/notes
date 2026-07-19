@@ -13,7 +13,7 @@
 - Use vulnx to determine if there are any useful vulnerabilities that exist for system
 ## 1.3 A
 - If application is web application
-- Find out if files can be uploaded. If file can be uploaded
+- Find out if files can be uploaded. If file can be uploaded, check for bypass filters 
 - Find out if there are any vulnerable parameters after walking web application 
 - Find out if there are any interesting/useful cookies as a result of the application
 - Identify additional subdomains using ffuf
