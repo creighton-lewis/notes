@@ -72,7 +72,10 @@ nxc smb $ip -u $uname -p $pass --spider IT --content --pattern "key"
 
 ```
 ```
-nxc smb $ip -u $uname -p $pass --get-file \\share\name new-name
+nxc smb $ip -u $uname -p $pass --get-file --share file-name new-name 
+```
+```
+nxc smb $ip -u $uname -p $pass --share IT --get-file Upgrade_Notice.pdf notice.pdf
 ```
 
 *Downloading all files 
