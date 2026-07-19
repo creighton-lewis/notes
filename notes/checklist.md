@@ -6,6 +6,7 @@
 - Run subdomain scan for ffuf
 ## 1.2 
 - Navigate to each site in browser
+- Utilize http and https 
 - Attempt to crawl the web application
 - Run full scan with owasp zap 
 - Record what ports are open and technologies used
