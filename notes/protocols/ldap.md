@@ -12,5 +12,5 @@ ldapsearch -X -H ldap://ip -b "dc=authority,dc=htb"
 ```
 
 ```
-nxc ldap 10.129.232.88 -u $uname -p $pass --bloodhound --dns-server $ip
+nxc ldap 10.129.232.88 -u $uname -p $pass --bloodhound --dns-server $ip # adding dns-server was crucial in recent activity
 ```
