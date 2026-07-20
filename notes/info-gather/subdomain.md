@@ -20,9 +20,10 @@ ffuf -H "Host: FUZZ.titanic.htb" -w /usr/share/seclists/Discovery/DNS/bitquark-s
 # Directories 
 ```
 
-ffuf -w usr/share/seclists/Discovery/Web-Content/raft-large-directories-lowercase.txt
-ffuf -w usr/share/seclists/Discovery/Web-Content/raft-medium-directories-lowercase.txt
-ffuf -w usr/share/seclists/Discovery/Web-Content/small-medium-directories-lowercase.txt
-
+ffuf -w usr/share/seclists/Discovery/Web-Content/raft-large-directories-lowercase.txt  -u http://$ip 
+ffuf -w usr/share/seclists/Discovery/Web-Content/raft-medium-directories-lowercase.txt  -u http://$ip 
+ffuf -w usr/share/seclists/Discovery/Web-Content/small-medium-directories-lowercase.txt  -u http://$ip 
+ffuf -w /usr/share/seclists/DirBuster-2007_directory-list-2.3-big.txt -u http://$ip 
+ffuf -w /Discovery/Web-Content/DirBuster-2007_directory-list-lowercase-2.3-big.txt  -u http://$ip 
 ```
 
