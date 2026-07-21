@@ -31,7 +31,9 @@ dig @$ip  axfr trick.thb
 ```
 ettercap -T -q -M arp:remote /<gateway-ip>// /<target-ip>// -P dns_spoof
 ```
-
+>[!IMPORTANT]
+> how is gateway ip address found? Is it usually provided?
+>
 ## DNS Exfiltration 
 1. Clone and setup server
 ```
